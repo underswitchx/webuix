@@ -39,6 +39,7 @@
 	import WebSearchResults from './ResponseMessage/WebSearchResults.svelte';
 	import Sparkles from '$lib/components/icons/Sparkles.svelte';
 	import MarkdownTokens from './MarkdownTokens.svelte';
+	import Markdown from './Markdown.svelte';
 
 	export let message;
 	export let siblings;
@@ -89,7 +90,7 @@
 	})();
 
 	$: if (message) {
-		renderStyling();
+		// renderStyling();
 	}
 
 	const renderStyling = async () => {
@@ -420,7 +421,7 @@
 				{/if}
 
 				<div
-					class="prose chat-{message.role} w-full max-w-full dark:prose-invert prose-p:my-0 prose-img:my-1 prose-headings:my-1 prose-pre:my-0 prose-table:my-0 prose-blockquote:my-0 prose-ul:-my-2 prose-ol:-my-2 prose-li:-my-3 whitespace-pre-line"
+					class="prose chat-{message.role} w-full max-w-full dark:prose-invert prose-p:my-0 prose-img:my-1 prose-headings:my-1 prose-pre:my-0 prose-table:my-0 prose-blockquote:my-0 prose-ul:-my-3 prose-ol:-my-3 prose-li:-my-4 whitespace-pre-line"
 				>
 					<div>
 						{#if (message?.statusHistory ?? [...(message?.status ? [message?.status] : [])]).length > 0}
@@ -507,7 +508,14 @@
 									<!-- always show message contents even if there's an error -->
 									<!-- unless message.error === true which is legacy error handling, where the error message is stored in message.content -->
 									{#key message.id}
-										<MarkdownTokens id={message.id} {tokens} />
+										<Markdown
+											content={replaceTokens(
+												sanitizeResponseContent(message?.content),
+												model?.name,
+												$user?.name
+											)}
+										/>
+										<!-- <MarkdownTokens id={message.id} {tokens} /> -->
 									{/key}
 								{/if}
 
