@@ -1,7 +1,3 @@
-Certainly! Here’s a revised README focusing on the company MLAI and a model named Abi (or Abbey):
-
----
-
 # MLAI Open WebUI & Deployment Container 👋
 
 ![GitHub stars](https://img.shields.io/github/stars/open-webui/open-webui?style=social)
@@ -156,16 +152,6 @@ This project is licensed under the [MIT License](LICENSE). See the [LICENSE](LIC
 ## Support 💬
 
 For any questions or support, please open an issue or join our [MLAI Discord community](https://discord.gg/5rJgQTnV4s).
-
-## Star History
-
-<a href="https://star-history.com/#open-webui/open-webui&Date">
-  <picture>
-    <source media="(prefers-color-scheme: dark)" srcset="https://api.star-history.com/svg?repos=open-webui/open-webui&type=Date&theme=dark" />
-    <source media="(prefers-color-scheme: light)" srcset="https://api.star-history.com/svg?repos=open-webui/open-webui&type=Date" />
-    <img alt="Star History Chart" src="https://api.star-history.com/svg?repos=open-webui/open-webui&type=Date" />
-  </picture>
-</a>
 
 ---
 
